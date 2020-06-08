@@ -1,0 +1,56 @@
+<!--
+<h1>Hola Mundo {{ title }}</h1>
+
+<button (click)="changeTitle()">Change Title</button>
+
+
+<input type="text" [(ngModel)]="rockBandName" (keydown.enter)="addRockBand()"> {{ rockBandName }}
+<button (click)="addRockBand()">add</button>
+<button (click)="empty()">vaciar</button>
+
+<ul>
+  <li *ngIf="rockbands.length === 0">
+    No hay bandas de rock
+  </li>
+  <li *ngFor="let rock of rockbands; index as i">
+    {{ rock }} {{ i + 1 }}
+    <strong *ngIf="i === 0">Este es el Primero</strong>
+    <button (click)="deleteItem(i)">delete</button>
+    <button (click)="updateItem(i)">update</button>
+  </li>
+</ul>
+
+<div *ngIf="rockBandName ===  'angel'">
+  es angel
+</div>
+
+<div *ngIf="rockBandName ===  'julian'">
+  es julian
+</div>
+
+<div *ngIf="rockBandName ===  'nicolas'">
+    es nicolas
+</div> 
+
+<div [ngSwitch]="rockBandName">
+  <p *ngSwitchCase="'angel'">es angel</p>
+  <p *ngSwitchCase="'julian'">es julian</p>
+  <p *ngSwitchCase="'nicolas'">es nicolas</p>
+  <p *ngSwitchDefault>No muestra nada</p>
+</div>
+
+<ul>
+  <li *ngFor="let user of users">
+    <div *ngIf="user.isSingle" class="avatar">
+      Nombre: {{ user.name }}
+      Edad: {{ user.age}}
+      Soltero: {{ user.isSingle ? 'Si' : 'No' }}
+      Image: {{ user.avatar }}
+      <img [src]="user.avatar" alt="">
+    </div>
+  </li>
+</ul>
+
+<app-product-list></app-product-list> -->
+
+<app-list></app-list>
