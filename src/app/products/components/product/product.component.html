@@ -1,8 +1,9 @@
 <h1>{{ product.title | uppercase | reverse }}</h1>
-<img [src]="product.image" alt ="">
-<h5>{{ product.price | currency }}</h5>
-<p>{{ product.text | slice:0:15 | uppercase}}</p>
+<img [src]="product.image" alt="">
+<h5>{{ product.price | currency | uppercase }}</h5>
+<p>{{ product.text | slice:0:15 | uppercase }}</p>
 <p>{{ today | date:'yyyy.MM.dd' }}</p>
+<p>{{ today | dateFormat:'PPPPpppp' }}</p>
 <p>{{ today | dateFormat:'yyyy' }}</p>
 
 <button (click)="viewDetail()">ver el detalle</button>
