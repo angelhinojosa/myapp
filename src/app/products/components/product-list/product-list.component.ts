@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router  } from '@angular/router';
+
 import { Product } from '@products/models/product.model';
+import { ProductService } from '@products/services/product.service';
 
 
 @Component({
@@ -9,37 +12,20 @@ import { Product } from '@products/models/product.model';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[] = [
-    {
-      id: 1,
-      title: 'Producto 1',
-      price: 200,
-      text: 'Super Desayuno de prueba 1',
-      image: 'assets/imagenes/img1.jpg',
-    },
-    {
-      id: 2,
-      title: 'Producto 2',
-      price: 200,
-      text: 'Un desayuno diferente',
-      image: 'assets/imagenes/img2.jpg',
-    },
-    {
-      id: 3,
-      title: 'Producto 3',
-      price: 200,
-      text: 'Desayumo preferido del mes',
-      image: 'assets/imagenes/img3.jpeg',
-    }
-  ]
+  products: Product[] = [];
 
-  constructor() { }
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.products = this.productService.getAllProducts();
   }
 
   onClickedProduct(id: number) {
     console.log('clicked', id);
+    this.router.navigate(['/products', id]);
   }
 
 }
