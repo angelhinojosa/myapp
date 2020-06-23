@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+
+// El PreloadAllModules del routing funciona bien cuando la app no tiene muchos módulos, unos 20 máximo
+
+
+import { Page404Component } from './page404/page404.component';
 
 
 const routes: Routes = [
+  {
+    path: '', // el vacío es la redirección por defecto de nuestra página.
+    redirectTo: 'products',
+    pathMatch: 'full'
+  },
   {
     path: 'todos',
     loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule)
@@ -18,11 +28,21 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+  },
+  {
+    path: '**', // Para cuando se introduce una ruta vacía se usa el doble *
+    component: Page404Component
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
