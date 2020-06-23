@@ -18,6 +18,8 @@ export class FormComponent implements OnInit {
 
   constructor() {
     const validations = [Validators.minLength(10), Validators.required];
+    // FormControl recibe 3 parámetros, 1-> valor inicial, 2-> array de validaciones sincronas y
+    // 3-> array de validaciones asincronas (conexión a fuente de datos externa).
     this.emailField = new FormControl('', validations);
     this.emailField.valueChanges
     .pipe(
