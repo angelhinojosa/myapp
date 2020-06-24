@@ -10,12 +10,14 @@ export class ProductFormComponent implements OnInit {
 
   form: FormGroup;
 
+  // Todo lo que necesitamos obtener de forma instantane debe ir en el constructor.
   constructor(
     private formBuilder: FormBuilder
   ) {
     this.buildForm();
   }
 
+  // Todo lo que no sea instantaneo se mete en el ngOnInit
   ngOnInit(): void {
   }
 
