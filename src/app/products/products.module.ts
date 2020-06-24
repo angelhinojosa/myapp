@@ -13,6 +13,8 @@ import { SharedModule } from '@shared/shared.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 
+import { MaterialModule } from '@material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
+
   ],
   providers: [
      ProductService,

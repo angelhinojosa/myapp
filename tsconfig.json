@@ -22,7 +22,8 @@
       "@basic/*": ["src/app/basic/*"],
       "@users/*": ["src/app/users/*"],
       "@products/*": ["src/app/products/*"],
-      "@utils/*": ["src/app/utils/*"]
+      "@utils/*": ["src/app/utils/*"],
+      "@material/*": ["src/app/material/*"]
     }
   },
   "angularCompilerOptions": {
