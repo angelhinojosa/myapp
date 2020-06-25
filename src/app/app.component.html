@@ -1,10 +1,11 @@
-<nav>
-    <ul>
-        <li><a routerLink="/basic">Basic</a></li>
-        <li><a routerLink="/products">Products</a></li>
-        <li><a routerLink="/todos">Todos</a></li>
-        <li><a routerLink="/users">Users</a></li>
-        <li><a routerLink="/contact">Contacto</a></li>
-    </ul>
-</nav>
+<mat-toolbar color="primary">
+    <nav>
+       <a mat-button matTooltip="Módulo Basic" routerLink="/basic">Basic</a>
+       <a mat-button matTooltip="Módulo Products"routerLink="/products">Products</a>
+       <a mat-button matTooltip="Módulo Todos" routerLink="/todos">Todos</a>
+       <a mat-button routerLink="/users">Users</a>
+       <a mat-button routerLink="/contact">Contacto</a>
+    </nav>
+</mat-toolbar>
+
 <router-outlet></router-outlet>
