@@ -14,24 +14,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'todos',
-    loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule)
+    path: '',
+    loadChildren: () => import('./website/website.module').then(m => m.WebsiteModule)
   },
   {
-    path: 'basic',
-    loadChildren: () => import('./basic/basic.module').then(m => m.BasicModule)
-  },
-  {
-    path: 'products',
-    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
-  },
-  {
-    path: 'users',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+    path: 'cms',
+    loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
   },
   {
     path: '**', // Para cuando se introduce una ruta vacía se usa el doble *

@@ -12,8 +12,11 @@ import { ProductService } from './services/product.service';
 import { SharedModule } from '@shared/shared.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductFormAltComponent } from './components/product-form-alt/product-form-alt.component';
 
 import { MaterialModule } from '@material/material.module';
+
+
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { MaterialModule } from '@material/material.module';
     ProductComponent,
     ProductListComponent,
     ProductDetailComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFormAltComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,6 @@ import { MaterialModule } from '@material/material.module';
     SharedModule,
     ReactiveFormsModule,
     MaterialModule
-
   ],
   providers: [
      ProductService,

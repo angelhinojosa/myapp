@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductFormAltComponent } from './components/product-form-alt/product-form-alt.component';
 
 
 // Primero se definen las rutas estáticas (no tienen variables)
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: ProductFormComponent
+  },
+  {
+    path: 'new-alt',
+    component: ProductFormAltComponent
   },
   {
     path: ':id',
