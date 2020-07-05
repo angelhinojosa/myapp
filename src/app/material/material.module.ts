@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -35,7 +36,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     LayoutModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   exports: [
     MatCardModule,
@@ -51,7 +53,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     LayoutModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }
