@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,15 @@ export class AuthService {
   hasSession(): Observable<boolean> {
     return this.authFire.authState
     .pipe(
-      map(user => user === null ? false : true)
+      // Guardar en el LOCALSTORAGE
+      // tap(user => {
+      //   if (user) {
+      //     localStorage.setItem('currentUser', JSON.stringify(user));
+      //     const currentUser = localStorage.getItem('currentUser');
+      //     const original = JSON.parse(currentUser);
+      //   }
+      // }),
+      map(user => user === null ? false : true),
     );
   }
 }

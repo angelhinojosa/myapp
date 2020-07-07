@@ -5,7 +5,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 
 import { Page404Component } from './page404/page404.component';
-
+import { AuthGuard } from '@auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'cms',
+    canActivate: [ AuthGuard ],
     loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
   },
   {
