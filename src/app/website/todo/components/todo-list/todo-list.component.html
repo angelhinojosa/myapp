@@ -1,4 +1,8 @@
-<input type="text" [(ngModel)]="title" (keydown.enter)="addTodo()">
+<input type="text" [formControl]="fieldTitle" (keydown.enter)="addTodo()">
+<div *ngIf="fieldTitle.errors && fieldTitle.dirty"> 
+  <p *ngIf="fieldTitle.hasError('minlength')">La Tarea debe de tener 3 letras como mínimo.</p>
+  <p *ngIf="fieldTitle.hasError('hasTodo')">La Tarea ya Existe.</p>
+</div>
 
 <app-todo
   (delete)="onDeleteTodo($event, i)"
