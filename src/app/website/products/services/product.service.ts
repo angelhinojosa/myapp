@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Product } from '@products/models/product.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
 
   products: Product[] = [
@@ -16,14 +18,14 @@ export class ProductService {
     {
       id: 2,
       title: 'Producto 2',
-      price: 200,
+      price: 150,
       text: 'Un desayuno diferente',
       image: 'assets/imagenes/img2.jpg',
     },
     {
       id: 3,
       title: 'Producto 3',
-      price: 200,
+      price: 300,
       text: 'Desayumo preferido del mes',
       image: 'assets/imagenes/img3.jpeg',
     }
