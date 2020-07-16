@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Product } from '@products/models/product.model';
 
+import { of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,6 +42,6 @@ export class ProductService {
 
   getProduct(productId: string) {
     console.log(productId);
-    return this.products.find(product => product.id === parseInt(productId, 10));
+    return of(this.products.find(product => product.id === parseInt(productId, 10)));
   }
 }
