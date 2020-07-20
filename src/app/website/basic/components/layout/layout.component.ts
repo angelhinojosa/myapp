@@ -62,5 +62,9 @@ export class LayoutComponent implements OnInit {
     this.rockbands[index] = 'se cambio';
   }
 
+  addToken() {
+    localStorage.setItem('token', '12121212');
+  }
+
 
 }
