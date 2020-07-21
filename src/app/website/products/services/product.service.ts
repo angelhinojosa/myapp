@@ -44,4 +44,21 @@ export class ProductService {
     console.log(productId);
     return of(this.products.find(product => product.id === parseInt(productId, 10)));
   }
+
+  getCategories() {
+    return of([
+      {
+        name: 'Cat 1',
+        id: 1
+      },
+      {
+        name: 'Cat 2',
+        id: 2
+      },
+      {
+        name: 'Cat 3',
+        id: 3
+      }
+    ]);
+  }
 }

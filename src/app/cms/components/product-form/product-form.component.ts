@@ -5,6 +5,9 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { MyValidators } from '@utils/validators';
 import { Observable } from 'rxjs';
 
+import { ProductService } from './../../../website/products/services/product.service';
+
+
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
@@ -15,17 +18,23 @@ export class ProductFormComponent implements OnInit {
   form: FormGroup;
 
   uploadPercent$: Observable<number>;
+  categories: any[] = [];
 
   // Todo lo que necesitamos obtener de forma instantane debe ir en el constructor.
   constructor(
     private formBuilder: FormBuilder,
-    private fireStorage: AngularFireStorage
+    private fireStorage: AngularFireStorage,
+    private productsService: ProductService
   ) {
     this.buildForm();
   }
 
   // Todo lo que no sea instantaneo se mete en el ngOnInit
   ngOnInit(): void {
+    this.productsService.getCategories()
+    .subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
   private buildForm(){
@@ -34,7 +43,7 @@ export class ProductFormComponent implements OnInit {
       image: [''],
       price: [10000, [Validators.required]],
       text: ['', [Validators.required, Validators.minLength(100)]],
-      category: ['', [Validators.required]]
+      category_id: ['', [Validators.required]]
     });
 
     // this.form
